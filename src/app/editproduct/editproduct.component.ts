@@ -11,7 +11,7 @@ export class EditproductComponent implements OnInit {
 
 	id;
 	product;
-	constructor(public route:ActivatedRoute,public _productservice:ProductService) {
+	constructor(public route:ActivatedRoute,public _productservice:ProductService,public router:Router) {
 		this.id = this.route.snapshot.params._id;
 		this.get();
 	}
@@ -33,6 +33,7 @@ export class EditproductComponent implements OnInit {
 		this._productservice.putData(this.id,product).subscribe(res=>{
 			console.log("res-=-=",res);
 			alert("Data Updated");
+			this.router.navigate(["/productsComponent"]);
 		},err=>{
 			console.log("res-=-=",err);
 		})

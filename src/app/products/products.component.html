@@ -1,19 +1,23 @@
-<h1 style="text-align: center;">Products</h1>
-<button class="btn btn-primary" title="add product" routerLink="/addProductComponent"><i class="fas fa-plus"></i></button>
+<div class="row">
+	<div class="col-12">
+		<h1 style="text-align: center;">Products</h1>
+		<button class="btn btn-primary" title="add product" routerLink="/addProductComponent"><i class="fas fa-plus"></i></button>
 
-<table class="mt-2" border="1" cellpadding="5">
-	<tr>
-		<th>Id</th>
-		<th>Product Name</th>
-		<th>Price</th>
-		<th>Quantity</th>
-		<th>Actions</th>
-	</tr>
-	<tr *ngFor = "let product of products">
-		<td>{{product._id}}</td>
-		<td>{{product.name}}</td>
-		<td>{{product.price}}</td>
-		<td>{{product.qun}}</td>
-		<td><button class="btn btn-primary mb-2" routerLink="/editProduct/{{product._id}}">Edit</button></td>
-	</tr>
-</table>
+		<table class="mt-2 mb-2" border="1" cellpadding="5">
+			<tr>
+				<th>Id</th>
+				<th>Product Name</th>
+				<th>Price</th>
+				<th>Quantity</th>
+				<th>Actions</th>
+			</tr>
+			<tr *ngFor = "let product of products">
+				<td>{{product._id}}</td>
+				<td>{{product.name}}</td>
+				<td>{{product.price}}</td>
+				<td>{{product.qun}}</td>
+				<td><button class="btn btn-primary mb-2" routerLink="/editProduct/{{product._id}}">Edit</button><button class="btn btn-primary mb-2 ml-2" (click)="deleteData(product)">Delete</button></td>
+			</tr>
+		</table>
+	</div>
+</div>

@@ -26,6 +26,7 @@ export class AddproductComponent implements OnInit {
 		this._productservice.postData(this.productForm.value).subscribe(res=>{
 			console.log("res-=-=",this.productForm.value);
 			alert("Data Inserted");
+			this.router.navigate(["/productsComponent"]);
 		},err=>{
 			console.log("res-=-=",err);
 		})

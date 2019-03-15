@@ -23,4 +23,14 @@ export class ProductsComponent implements OnInit {
 			console.log("res-=-=-=",err);
 		})
 	}
+
+	deleteData(product){
+		console.log(product._id);
+		this._productservice.deletedata(product._id).subscribe(res=>{
+			console.log("res-=-=",res);
+			this.getdt();
+		},err=>{
+			console.log("res-=-=",err);
+		})
+	}
 }
